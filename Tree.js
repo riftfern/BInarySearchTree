@@ -107,6 +107,44 @@ const Tree = (array) => {
 
             return arr;;
         },
+
+        inOrder(arr = [], root = this.root){
+            if(root === null) return;
+
+            if(root.left) this.inOrder(arr, root.left);
+
+            arr.push(root.data);
+
+            if(root.right) this.inOrder(arr, root.right);
+
+            return arr;
+        },
+
+        preOrder(arr = [], root = this.root){
+            if(root === null) return;
+
+            arr.push(root.data);
+
+            if(root.left) this.preOrder(arr, root.left);
+
+            if(root.right) this.preOrder(arr, root.right);
+
+            return arr;
+        },
+
+        postOrder(arr = [], root = this.root){
+            if(root === null) return;
+
+            if(root.left) this.postOrder(arr, root.left);
+
+            if(root.right) this.postOrder(arr, root.right);
+
+            arr.push(root.data);
+            
+            return arr;
+        },
+
+
     }
 }
 
